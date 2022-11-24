@@ -30,7 +30,7 @@
 	<!-- Main navbar -->
 	<div class="navbar navbar-inverse bg-indigo">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="<?=base_url('User-Dashboard')?>">
+			<a class="navbar-brand" href="<?=base_url('user-dashboard')?>">
 				<img src="<?=base_url().'assets/image/system/'?><?=$show_SystemInfo['banner']?>" alt="" style="height:200%;margin-top:-4%;">
 			</a>
 
@@ -79,8 +79,8 @@
 						
 						<div class="navigation-wrapper collapse" id="user-nav">
 							<ul class="navigation">
-								<li class="<?=$nav == 'User-Dashboard' ? 'active' : ''?>">
-									<a href="<?=BASE_URL('User-Dashboard');?>">
+								<li class="<?=$nav == 'user-dashboard' ? 'active' : ''?>">
+									<a href="<?=BASE_URL('user-dashboard');?>">
 										<i class="icon-user-plus"></i> <span>My profile</span>
 									</a>
 								</li>
@@ -98,12 +98,23 @@
 								<!-- Main Page Navigation -->
 								<li class="navigation-header"><span>Home</span> <i class="icon-menu" title="Main pages"></i></li>
 
-								<li class="<?=$nav == 'User-Dashboard' ? 'active' : ''?>">
+								<li class="<?=$nav == 'user-dashboard' ? 'active' : ''?>">
 									<a href="<?=BASE_URL('user-dashboard')?>"><i class="icon-home4"></i> <span>Dashboard</span></a>
 								</li>
 
+								<?php
+									if ($session_division == 'ORD') {
+										?>
+											<li class = "<?=$nav == 'ord_encode' ? 'active' : ''?>">
+												<a href="<?=BASE_URL('ord-daily-encode')?>">
+													<i class="icon-drawer-in"></i> <span>ORD - Daily Encode</span>
+												</a>
+											</li>
+										<?php
+									}
+								?>
 								<li class="<?=$nav == 'Received-Document' ? 'active' : ''?>">
-									<a href="<?=BASE_URL('received_document')?>"><i class="icon-drawer-in"></i> <span>Document Received</span></a>
+									<a href="<?=BASE_URL('received_document')?>"><i class="icon-drawer-in"></i> <span>Document Received (External)</span></a>
 								</li>
 
 								<!-- <li>
@@ -119,9 +130,9 @@
 									</ul>
 								</li> -->
 
-								<li class="<?=$nav == '' ? 'active' : ''?>">
+								<!-- <li class="<?=$nav == '' ? 'active' : ''?>">
 									<a href="<?=BASE_URL('#')?>"><i class="icon-pen"></i> <span>Feedback/Suggestion</span></a>
-								</li>
+								</li> -->
 								<!-- /Main Page Navigation -->
 							</ul>
 						</div>

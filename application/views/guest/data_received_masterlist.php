@@ -53,7 +53,7 @@
 				<!-- Content area -->
 				<div class="content">
 					<!-- start here -->
-					<center><h1><b>EDTS DATA MASTERLIST FOR AY <?php echo date('Y');?></b></h1></center><br>
+					<center><h1><b>EDTS DATA MASTERLIST FOR F.Y <?php echo date('Y');?></b></h1></center><br>
 
 					<center>
 						<a href="<?=base_url('data-received-masterlist?ay=')?><?=date('Y') ?>&division=PALD" class="btn btn-xs" style="width: 100px; background-color: #f2cf88; color: #000;">

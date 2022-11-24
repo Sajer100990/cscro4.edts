@@ -10,7 +10,7 @@
 			<div class="heading-elements">
 				<div class="heading-btn-group">
 					<a href="#" class="btn btn-link btn-float text-size-small has-text">
-						<i class="icon-home2 text-primary"></i> <span>PALD</span>
+						<i class="icon-home2 text-primary"></i> <span><?=$session_division;?></span>
 					</a>
 					
 					<a href="#" class="btn btn-link btn-float text-size-small has-text">

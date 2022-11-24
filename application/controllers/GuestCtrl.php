@@ -57,7 +57,7 @@ class GuestCtrl extends CI_Controller {
 							$url = base_url('Admin-Dashboard');
 							break;
 
-						case 1: case 2: case 3: case 4: case 5: case 6: case 6:
+						case 1: case 2: case 3: case 4: case 5: case 6: case 7:
 							$this->session->set_userdata(array('session_division' => $result['division']));
 							$title = 'Success!';
 							$status = 'success';

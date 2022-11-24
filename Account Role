@@ -1,3 +1,9 @@
 ROLE
 0 - Administrator
-1 - RO
+1 - 
+2 - ESD
+3 - MSD
+4 - HRD
+5 - PSED
+6 - LSD
+7 - ORD

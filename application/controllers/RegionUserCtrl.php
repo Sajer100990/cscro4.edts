@@ -57,10 +57,9 @@ class RegionUserCtrl extends CI_Controller {
 	// navigation
 	public function user_dashboard() {
 		// including script and navigation
-		$this->data['nav'] = 'User-Dashboard';
+		$this->data['nav'] = 'user-dashboard';
 		$this->data['pageScript'] = 'pald';
 		// set session_division as dynamic
-		
 
 		// call out model function
 		$this->data['show_SystemInfo'] = $this->SystemInfoModel->show_SystemInfo();
@@ -89,6 +88,21 @@ class RegionUserCtrl extends CI_Controller {
 		// this will be include the value of data to pald view
 		$this->load->view('region/includes/header',$this->data);
 		$this->load->view('region/dataentry_masterlist_division',$this->data);
+		$this->load->view('region/includes/footer',$this->data);
+	}
+
+	public function ord_daily_encode() {
+		// including script and navigation
+		$this->data['nav'] = 'ord_encode';
+		$this->data['pageScript'] = 'ord_js';
+
+		// call out model for sys info and user data
+		$this->data['show_SystemInfo'] = $this->SystemInfoModel->show_SystemInfo();
+		$this->data['UserData'] = $this->UserModel->user_data('*', $this->user_session_id);
+
+		// this will be include the value of data to pald view
+		$this->load->view('region/includes/header',$this->data);
+		$this->load->view('region/ord_daily_encode',$this->data);
 		$this->load->view('region/includes/footer',$this->data);
 	}
 }

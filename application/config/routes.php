@@ -55,6 +55,8 @@ $route['onday_receiver'] 				= 'PaldCtrl/onday_receiver';
 //  ********************************************************************************************88
 
 // FOR USER
+
+$route['ord-daily-encode'] 				= 'RegionUserCtrl/ord_daily_encode';
 $route['received_document'] 			= 'RegionUserCtrl/received_document';
 $route['user-dashboard'] 				= 'RegionUserCtrl/user_dashboard';
 $route['user_logout'] 					= 'RegionUserCtrl/UserLogout';
