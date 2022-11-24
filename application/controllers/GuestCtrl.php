@@ -90,5 +90,28 @@ class GuestCtrl extends CI_Controller {
 			echo json_encode(array('title' => $title, 'status' => $status, 'url' => $url, 'message' => $message));
 		}
 	}
+
+	public function data_received_masterlist() {
+		if (!isset($_GET['division'])) {
+			// call out model function
+			$this->data['show_SystemInfo'] = $this->SystemInfoModel->show_SystemInfo();
+			// this will be include the value of data to home view
+			$this->load->view('guest/data_received_masterlist',$this->data);
+		}
+
+		else {
+			// get division particular div
+			$get_div = $_GET['division'];
+			// get AY
+			$get_ay = $_GET['ay'];
+			$this->data['load_DivisionEntry'] = $this->PaldDataModel->load_DivisionEntry('*', $get_div, $get_ay);
+
+			// call out model function
+			$this->data['show_SystemInfo'] = $this->SystemInfoModel->show_SystemInfo();
+			// this will be include the value of data to home view
+			$this->load->view('guest/guest_view',$this->data);
+		}
+		
+	}
 }
 ?>

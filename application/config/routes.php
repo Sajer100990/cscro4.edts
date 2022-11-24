@@ -43,8 +43,6 @@ $route['exportDB'] 						= 'AdminCtrl/exportDB';
 
 
 // need to be update
-
-
 $route['InsertSpelsFile'] 				= 'PaldCtrl/InsertSpelsFile';
 $route['SPELS-Masterlist'] 				= 'PaldCtrl/SpelsMasterlist';
 $route['Edit-Spels'] 					= 'PaldCtrl/EditSpels';
@@ -112,6 +110,7 @@ $route['Manage-UserAccount'] 			= 'ManageUserCtrl/ManageUserAccount';
 
 
 // guest
+$route['data-received-masterlist'] 		= 'GuestCtrl/data_received_masterlist';
 $route['UserLogin'] 					= 'GuestCtrl/UserLogin';
 $route['default_controller'] 			= 'GuestCtrl';
 $route['404_override'] 					= '';

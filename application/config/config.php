@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // testing ip
-$config['base_url'] = 'http://192.168.0.114/cscro4.edts/';
+$config['base_url'] = 'http://192.168.104.210/cscro4.edts/';
 // server ip dont remove
 // $config['base_url'] = 'http://10.10.4.14/cscro4.filemanagement/';
 /*
