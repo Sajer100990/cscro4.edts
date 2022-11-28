@@ -1,4 +1,4 @@
-<!-- Main content -->
+ <!-- Main content -->
 <div class="content-wrapper">
 	<!-- Page header -->
 	<div class="page-header page-header-default">
@@ -39,7 +39,7 @@
 		<input type="hidden" name="base_url" id="base_url" value="<?=base_url()?>">
 
 		<div class="row">
-			<div class="col-md-8">
+			<div class="col-md-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h6 class="panel-title">
@@ -54,10 +54,10 @@
 					
 					<div class="panel-body" style="text-transform: uppercase;">
 						<form method="post">
-							<div class="col-md-6">
+							<div class="col-md-4">
 								<div class="form-group has-feedback-left">
 									<select class="form-control input-xS" name="division" id="division" onchange="GenerateNum()">
-										<option value="null_value" ><small>- SELECT DIVISION -</small></option>
+										<option value="null_value" ><small>- FROM WHAT DIVISION -</small></option>
 										<option disabled>----------</option>
 										<?php
 											if (is_array($load_Division)) {
@@ -125,14 +125,21 @@
 									</div>
 								</div>
 
-								<div class="form-group">
-									<div class="col-xs-12" style="margin-bottom: 10px;">
-										<textarea id="remarks" name="remarks" rows="2" class="form-control" placeholder="- REMARKS -" style="resize: none;"></textarea>
+								<div class="form-group has-feedback-left">
+									<select class="form-control input-xS" name="fd_type" id="fd_type">
+										<option value="null_value" ><small>- FINAL/DRAFT -</small></option>
+										<option disabled>----------</option>
+										<option value="FINAL">FINAL</option>
+										<option value="DRAFT">DRAFT</option>
+									</select>
+
+									<div class="form-control-feedback">
+										<i class="icon-select2"></i>
 									</div>
 								</div>
 							</div>
 
-							<div class="col-md-6">
+							<div class="col-md-4">
 								<div class="form-group">
 									<div class="col-xs-12">
 										<textarea id="subject" name="subject" rows="6" class="form-control" placeholder="- SUBJECT -" style="resize: none;"></textarea>
@@ -140,12 +147,54 @@
 								</div>
 
 								<div class="form-group">
-									<div class="col-xs-12" style="margin-bottom: 10px;">
+									<div class="col-xs-12">
 										<textarea id="sender" name="sender" rows="6" class="form-control" placeholder="- SENDER -" style="resize: none;"></textarea>
 									</div>
 								</div>
-								
-								<button id="btn_add_dataEntry" type="button" class="btn btn-primary btn-xs pull-right" onclick="add_PaldENtry()">
+							</div>
+
+							<div class="col-md-4">
+								<div class="form-group has-feedback-left">
+									<select class="form-control input-xS" name="action_officer" id="action_officer">
+										<option value="null_value" ><small>- ACTION OFFICER / SIGNATORY -</small></option>
+										<option disabled>----------</option>
+										<option value="MLGR">DIR. IV MARIA LETICIA G. REYNA</option>
+										<option value="JRA">DIR. III JOSEPHINE R. ALTURA</option>
+										<option value="RBJ">DIR. III RADNE B. JOMUAD</option>
+									</select>
+
+									<div class="form-control-feedback">
+										<i class="icon-select2"></i>
+									</div>
+								</div>
+
+								<div class="form-group has-feedback-left">
+									<select class="form-control input-xS" name="receiving_division" id="receiving_division" onchange="GenerateNum()">
+										<option value="null_value" ><small>- RECEIVING DIVISION -</small></option>
+										<option disabled>----------</option>
+										<?php
+											if (is_array($load_Division)) {
+												foreach ($load_Division as $list) {
+													echo '
+														<option value="'.$list->div_tag.'">'.$list->div_name.'</option>
+													';
+												}
+											}
+										?>
+									</select>
+
+									<div class="form-control-feedback">
+										<i class="icon-select2"></i>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="col-xs-12" style="margin-bottom: 10px;">
+										<textarea id="remarks" name="remarks" rows="6" class="form-control" placeholder="- REMARKS -" style="resize: none;"></textarea>
+									</div>
+								</div>
+
+								<button id="btn_add_dataEntry" type="button" class="btn btn-primary btn-xs pull-right" onclick="add_ord_entry()">
 									<i class="icon-plus-circle2 position-left"></i> SUBMIT
 								</button>
 							</div>
@@ -154,7 +203,7 @@
 				</div>
 			</div>
 
-			<div class="col-md-4">
+			<!-- <div class="col-md-4">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h6 class="panel-title">
@@ -176,7 +225,7 @@
 						</small>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 		<!-- /START OF MAIN CONTENT -->
 		

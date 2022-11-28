@@ -94,7 +94,7 @@ class RegionUserCtrl extends CI_Controller {
 	public function ord_daily_encode() {
 		// including script and navigation
 		$this->data['nav'] = 'ord_encode';
-		$this->data['pageScript'] = 'ord_js';
+		$this->data['pageScript'] = 'ord';
 
 		// call out model for sys info and user data
 		$this->data['show_SystemInfo'] = $this->SystemInfoModel->show_SystemInfo();
@@ -104,5 +104,10 @@ class RegionUserCtrl extends CI_Controller {
 		$this->load->view('region/includes/header',$this->data);
 		$this->load->view('region/ord_daily_encode',$this->data);
 		$this->load->view('region/includes/footer',$this->data);
+	}
+
+	// function
+	public function add_ord_entry() {
+		
 	}
 }
